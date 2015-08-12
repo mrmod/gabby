@@ -42,7 +42,7 @@ type (
 )
 
 func resourceId(controller Controller, request *http.Request) string {
-	strings.Split(request.RequestURI)
+	components := strings.SplitN(request.RequestURI, controller.ResourcePath(), 2)
 }
 
 func main() {
